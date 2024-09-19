@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Summary</title>
+</head>
+<body>
+    <h1>Final Dom Events</h1>
+    <h2 id="handle-status">Default Text</h2>
+    <button onclick="handleOnClick()">Handle Event by Add onclick function</button>
+    <button id="evnet-listener">Handle event by addEventListener</button> <br>
+    <br>
+    <h4 id="input-text-display">Hi friend</h4>
+    <input id="input-text" type="text">
+    <button id="update-text">Update name</button>
+    <script>
+        function handleOnClick() {
+            const handleStatus = document.getElementById('handle-status');
+            handleStatus.innerText = 'I Love You Brother'
+        }
+        document.getElementById('evnet-listener').addEventListener('click', function(){
+            const handleStatus = document.getElementById('handle-status');
+            handleStatus.innerText = "I don't love you"
+        })
+        // option 2
+        document.getElementById('update-text').addEventListener('click', function(){
+            const inputField = document.getElementById('input-text');
+            const inputText = inputField.value;
+            const updateName = document.getElementById('input-text-display');
+            updateName.innerText = inputText;
+            inputField.value = ''
+        })
+    </script>
+</body>
+</html>
